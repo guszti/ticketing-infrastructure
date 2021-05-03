@@ -17,4 +17,14 @@ build:
           sync:
               manual:
                   - src: "src/**/*.ts"
-                    dest: .0
+                    dest: .
+        - image: guszti/ticketing-client
+          context: client
+          docker:
+              dockerfile: Dockerfile
+          sync:
+              manual:
+                  - src: "**/*.ts"
+                    dest: .
+                  - src: "**/*.tsx"
+                    dest: .
